@@ -1,6 +1,9 @@
 {
   "ip": "OPENSHIFT_NODEJS_IP",
-  "port" : "OPENSHIFT_NODEJS_PORT",
+  "port" : OPENSHIFT_NODEJS_PORT,
+
+  // Set this to a secure string at least 10 characters long.  Do not share this value!
+  "sessionKey" : "OPENSHIFT_NODEJS_IP",
 
   "dbType" : "mongodb",
   "dbSettings" : {

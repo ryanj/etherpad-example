@@ -3,7 +3,6 @@
 # build hook has been run but before the application has been started back
 # up again.  This script gets executed directly, so it could be python, php,
 # ruby, etc.
-cp -v $OPENSHIFT_REPO_DIR/.openshift/mongodb_db.js $OPENSHIFT_REPO_DIR/node_modules/ueberDB/
 
 settingsfile=$OPENSHIFT_REPO_DIR/settings.json
 
@@ -21,13 +20,17 @@ if [[ -f ./server.js ]]
 then
   rm server.js
 fi
-ln -s node/server.js .
+if [[ -f ./package.json ]]
+then
+  rm package.json
+fi
+ln -s node_modules/ep_etherpad-lite/node/server.js .
+ln -s node_modules/ep_etherpad-lite/package.json .
 popd
-
-pushd $OPENSHIFT_REPO_DIR/static/js
-for i in ./*
-do
-  renamed=$(echo $i | sed 's/.js$//g')
-  ln -s $i $renamed
-done
+pushd $OPENSHIFT_REPO_DIR/node_modules
+if [[ -f ./ep_etherpad-lite ]]
+then
+  rm ep_etherpad-lite
+fi
+ln -s ../src/ ep_etherpad-lite
 popd
