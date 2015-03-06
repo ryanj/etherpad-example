@@ -1,7 +1,7 @@
 Etherpad on OpenShift
 =====================
 
-[![ETHERPAD ON OpenShift](http://launch-shifter.rhcloud.com/launch/ETHERPAD ON.svg)](https://openshift.redhat.com/app/console/application_type/custom?&cartridges[]=nodejs-0.10&cartridges[]=mongodb-2.4&initial_git_url=https://github.com/openshift/etherpad-example&name=etherpad)
+[![ETHERPAD ON OpenShift](http://launch-shifter.rhcloud.com/launch/ETHERPAD%20ON.svg)](https://openshift.redhat.com/app/console/application_type/custom?&cartridges[]=nodejs-0.10&cartridges[]=mongodb-2.4&initial_git_url=https://github.com/openshift/etherpad-example&name=etherpad)
 
 This git repository helps you get up and running quickly with latest Etherpad
 installation on OpenShift (v.1.4.0).  The backend database is MongoDB and the database
